@@ -25,3 +25,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+Canvas{
+  width:250%;
+  height: 250%;
+}
+
+
+a{
+  pointer-events:all;
+  color:rgb(255, 255, 255);
+  text-decoration:none;
+}
+
+.arrow{
+  position:absolute;
+  top:95%;
+  left:50%;
+  transform: translate(-50%,-50%);
+}
+
+.arrow span{
+  display:block;
+  width:20px;
+  height:20px;
+  border-bottom:5px solid white;
+  border-right:5px solid white;
+  transform: rotate(45deg);
+  margin:10px;
+  animation:scroll 3s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: rotate(45deg) translate(-15px, -15px);
+  }
+  50% {
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    transform: rotate(45deg) translate(15px, 15px);
+
+  }
+}

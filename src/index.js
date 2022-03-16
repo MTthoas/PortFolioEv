@@ -3,12 +3,45 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { Suspense } from 'react'
+
+
+function Overlay(){
+  return(
+
+    <>
+
+    <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
+      <a id="Effect" href="/" style={{ position: 'absolute', top: 40, left: 40, fontSize: '13px' }}>
+        Pecquery Matthias
+      </a>
+      <div style={{ position: 'absolute', top: 40, right: 40, fontSize: '13px' }}>
+        <a style={{ color: 'rgb(255, 255, 255)' }}> PortFolio </a>
+        </div>
+    </div>
+
+    <div class="arrow">
+      <span></span>
+
+    </div>
+
+    </>
+
+  )
+}
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <>
+  <Suspense fallback={null}>
+  <App />
+  </Suspense>
+  <Overlay />
+
+</>,
   document.getElementById('root')
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
