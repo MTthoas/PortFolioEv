@@ -10,21 +10,22 @@ const TopSectionContainer = styled.div`
     // background-color:#DF6450;
     display: flex;
     flex-direction : column;
-    align-items : center;
-    padding-top:45%;
+    align-items : left;
+    padding-top:07%;
     z-index:99;
+    padding-left:05%;
 `;
 
 const Logo = styled.h1`
     margin: 0;
-    color: #fff;
+    color: white;
     font-weight: 700;
     font-size:55px;
 `;
 
 const Slogan = styled.div`
     margin: 0;
-    color: #fff;
+    color: white;
     font-weight: 700;
     font-size:30px;
     margin-top:1em;
@@ -32,9 +33,12 @@ const Slogan = styled.div`
 
 export function TopSection(){
     return(
+        <>
     <TopSectionContainer>
-        <Logo>PECQUERY MATTHIAS</Logo>
-        <Slogan> Développeur </Slogan>
+        <Logo>Hi, I'm Matthias</Logo>
+        <Slogan> Developer Web </Slogan>
+        <button class="button-28" role="button">Contact me !</button>
     </TopSectionContainer>
+      </>
     )};
 

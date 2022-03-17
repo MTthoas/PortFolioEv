@@ -6,6 +6,8 @@ import { Suspense } from 'react';
 import { Bounds, ContactShadows, MeshDistortMaterial, useFBX, domContent } from '@react-three/drei'
 import { useIntersect, Image, ScrollControls, Scroll } from '@react-three/drei'
 import { Animator, ScrollContainer, ScrollPage, Sticky, Zoom,Fade, MoveOut } from 'react-scroll-motion'
+import useScrollSnap from 'react-use-scroll-snap';
+
 
 import Model from './Scene.js'
 import { Html } from '@react-three/drei'
@@ -25,7 +27,7 @@ useFrame(() => ref.current.rotation.y += 0.002)
 let fbx = useFBX('/source/low-poly-mill.fbx')
 // wrap fbx in primitive.
 return(
-<mesh ref={ref}>
+<mesh scale={0.24} ref={ref}>
   <primitive object={fbx} dispose={null} />
 </mesh>
 )
@@ -33,69 +35,92 @@ return(
 }
 
 
-
 function App({children}) {
 
-const domContent = useRef();
+const scrollRef = useRef(null);
+useScrollSnap({ ref: scrollRef, duration: 100, delay: 50 });
 
 return (
 
-<div className="App">
+<>
+
+  {/* <section id="GlobalApp"> */}
 
   <ScrollContainer>
 
+    <section id="App" ref={scrollRef}>
 
-    <ScrollPage page={0}>
+        <ScrollPage page={0}>
 
-      <div className="First">
+          <div className="First">
 
-        <Animator animation={(Sticky(), Fade(), MoveOut(0,-200))}>
+            <Animator animation={(Sticky(), Fade(), MoveOut(0,-200))}>
 
-          <CanvasContainer>
-            <TopSection />
+              <CanvasContainer>
+                <TopSection />
+                
 
-            <Canvas camera={{ position: [-40, 40, 70], fov: 50 }} dpr={[1, 2]}>
+                <Canvas id="canvas1" camera={{ position: [-40, 40, 70], fov: 50 }} dpr={[1, 2]}>
 
-              <hemisphereLight color="white" groundColor="#ff0f00" position={[-10, 40, 25]} intensity={0.7} />
-              <Suspense fallback={null}>
-                <Bounds fit clip margin={1.2}>
-                  <Object3d position={[10, 0, -10]} />
-                  {/*
-                  <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 1.75} /> */}
-                </Bounds>
+                  <hemisphereLight color="white" groundColor="#ff0f00" position={[-10, 40, 25]} intensity={0.7} />
+                  <Suspense fallback={null}>
+                    <Bounds fit clip margin={1.2}>
+                      <Object3d position={[10, 0, -10]} />
+                      {/*
+                      <OrbitControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 1.75} /> */}
+                    </Bounds>
 
-                <ContactShadows rotation-x={Math.PI / 2} position={[0, -35, 0]} opacity={0.2} width={200} height={200}
-                  blur={1} far={50} />
-              </Suspense>
+                  </Suspense>
 
-            </Canvas>
-          </CanvasContainer>
+                </Canvas>
+              </CanvasContainer>
 
-        </Animator>
+            </Animator>
 
-      </div>
+    
 
-    </ScrollPage>
+          </div>
+
+        </ScrollPage>
+
+      </section>
+
+      <section id="App2"> 
+
+        <ScrollPage page={1}>
+
+          <div className="second">
+
+            <Animator animation={Zoom()}>
+
+              <p> Coucou </p>
+
+            </Animator>
+
+          </div>
+
+        </ScrollPage>
+
+        </section>        
+
+      </ScrollContainer>
 
 
-    <ScrollPage page={1}>
 
+
+    {/* <section id="App2">
 
       <div className="second">
 
-        <Animator animation={Zoom()}>
-
-          <p>  </p>
-
-        </Animator>
+        <p> Coucou </p>
 
       </div>
-    </ScrollPage>
 
+    </section> */}
+    {/*
+  </section> */}
 
-
-  </ScrollContainer>
-</div>
+</>
 
 );
 }
