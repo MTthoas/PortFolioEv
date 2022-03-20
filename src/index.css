@@ -11,14 +11,14 @@ p{
   font-size:50px;
 }
 
- html{
+ /* html{
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
 
 section{
   scroll-snap-align: end;
-}
+} */
 
 #canvas1{
   margin-left:30%;
@@ -219,6 +219,7 @@ a{
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  margin-left: 9.5%;
 }
 
 .row {
@@ -239,7 +240,8 @@ a{
 .card {
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
+  min-width: 1200px;
   background-color: #fff;
   box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.5s;

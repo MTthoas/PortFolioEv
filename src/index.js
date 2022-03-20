@@ -16,9 +16,9 @@ function Overlay(){
         PortFolio - Pecquery Matthias
       </a>
       <div style={{ position: 'absolute', top: 40, right: 40, fontSize: '13px' }}>
-        <a class="a-header"> Me() </a>
-        <a class="a-header"> Projects() </a>
-        <a class="a-header"> Skills() </a>
+        <a class="a-header"> Home() </a>
+        <a class="a-header"> Work() </a>
+        <a class="a-header"> About() </a>
         <a class="a-header"> Contact() </a>
         </div>
     </div>

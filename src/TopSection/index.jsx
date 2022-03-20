@@ -42,8 +42,8 @@ export function TopSection(){
         <>
     <TopSectionContainer>
         <Logo>Hi, I'm Matthias</Logo>
-        <Slogan> Developer Web </Slogan>
-        <Paragraph> Front End / Back End </Paragraph>
+        <Slogan> Junior Developer </Slogan>
+        <Paragraph> Front End / Back End / Apps </Paragraph>
         <button class="button-28" role="button">Contact me !</button>
     </TopSectionContainer>
       </>
