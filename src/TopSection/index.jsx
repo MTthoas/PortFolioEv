@@ -31,12 +31,19 @@ const Slogan = styled.div`
     margin-top:1em;
 `;
 
+const Paragraph = styled.div`
+    color:grey;
+    font-weight: 300;
+    margin-top:1em;
+`
+
 export function TopSection(){
     return(
         <>
     <TopSectionContainer>
         <Logo>Hi, I'm Matthias</Logo>
         <Slogan> Developer Web </Slogan>
+        <Paragraph> Front End / Back End </Paragraph>
         <button class="button-28" role="button">Contact me !</button>
     </TopSectionContainer>
       </>

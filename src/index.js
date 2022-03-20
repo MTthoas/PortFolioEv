@@ -13,10 +13,13 @@ function Overlay(){
 
     <div style={{ position: 'absolute', top: 0, left: 0, pointerEvents: 'none', width: '100%', height: '100%' }}>
       <a id="Effect" href="/" style={{ position: 'absolute', top: 40, left: 40, fontSize: '13px' }}>
-        Pecquery Matthias
+        PortFolio - Pecquery Matthias
       </a>
       <div style={{ position: 'absolute', top: 40, right: 40, fontSize: '13px' }}>
-        <a style={{ color: 'rgb(255, 255, 255)' }}> PortFolio </a>
+        <a class="a-header"> Me() </a>
+        <a class="a-header"> Projects() </a>
+        <a class="a-header"> Skills() </a>
+        <a class="a-header"> Contact() </a>
         </div>
     </div>
 
